@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SINGIN</title>
+    <style>
+        *{ box-sizing: border-box; }
+        html, body{ margin: 0; padding: 0; }
+        .container{
+            margin: 10px 50px;
+        }
+        .form-group{
+            margin: 10px;
+        }
+        input{
+            width: 100%;
+            border: solid 1px #eee;
+            padding: 15px 10px;
+        }
+        button{
+            width: 200px;
+            padding: 15px;
+            margin-left: 250px;
+            background: #fff;
+            color: rgb(30, 255, 98);
+            border: solid 1px rgb(56, 255, 30);
+            cursor: pointer;
+            transition:  all .38s ease-in-out;
+        }
+        button:hover{
+            background: dodgerblue;
+            color: #fff;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 style="text-align : center;">SIGNIN </h2>
+            <div class="form-group">
+                <input type="text" name="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="pwd" id="pwd" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" onclick="login(event)">SIGNIN</button>
+
+            </div>
+            <div class="form-group">
+                <button type="submit" onclick="reg()" >SIGNUP</button>
+            </div>
+
+    </div>
+    <script>
+        function reg()
+        {
+            window.location="index.html";
+        }
+        function login(){
+             var email=document.getElementById('email').value;
+             var pwd=document.getElementById('pwd').value;
+
+            var email1 = localStorage.getItem('email1');
+            var pwd1 = localStorage.getItem('pwd1');
+
+            if(email==email1 && pwd==pwd1){
+                alert("SignUp successfully");
+            }
+            else{
+                alert("Email Or Password Invalid");
+            }
+        }
+        
+    </script>
+</body>
+</html>
